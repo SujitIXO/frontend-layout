@@ -1,0 +1,12 @@
+html,
+body {
+  overflow: hidden;
+}
+
+.sidebar-collapsed{
+  width: 10%;
+}
+
+.sidebar-expanded{
+  width: 100%;
+}

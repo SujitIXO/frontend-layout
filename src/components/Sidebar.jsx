@@ -1,76 +1,55 @@
 // Sidebar.js
 import React from "react";
-import { FaDownload } from "react-icons/fa";
+import { FaUpload } from "react-icons/fa";
 import { TbReportSearch } from "react-icons/tb";
 import { IoMdSettings } from "react-icons/io";
 
 const menus = [
   {
-    name: "Download File",
-    icons: <FaDownload />,
+    name: "Upload File",
+    icons: <FaUpload />,
   },
   {
     name: "Reports",
     icons: <TbReportSearch />,
   },
-  {
-    name: "Settings",
-    icons: <IoMdSettings />,
-  },
 ];
 
-const Sidebar = ({ collapsed, toggleSidebar }) => {
+const Sidebar = ({ collapsed, toggleSidebar, activeMenuItem, handleMenuItemClick }) => {
   return (
     <div
-      className={`bg-white h-screen flex flex-col justify-between border border-r-slate-200 ${
+      className={`bg-white hidden md:flex flex-col justify-between border border-r-slate-200 ${
         collapsed ? "w-[5%]" : "w-[20%]"
       }`}
     >
       <div className="p-4">
-        <p className={`uppercase text-xs text-gray-600 mb-4 tracking-wider ${collapsed ? 'hidden': ''}`}>
-          Homes
-        </p>
+        <p className={`uppercase text-lg text-gray-600 mb-4 tracking-wider ${collapsed ? 'hidden' : 'block'}`}>Dashboard</p>
         <ul className="mt-4">
           {menus.map((item, index) => (
-            <li key={index} className="flex items-center mb-2 gap-4">
+            <li key={index} className={`flex items-center mb-2 gap-4 ${collapsed ? 'px-2 py-2' : 'px-4 py-4'} text-lg rounded-xl button_slide slide_right ${
+              activeMenuItem === item.name ? "bg-[#7da9f1] text-white rounded-xl" : ""
+            }`}>
               {collapsed ? (
-                <span className="mt-2">{item.icons}</span>
+                <span className="mt-2 cursor-pointer" onClick={() => handleMenuItemClick(item.name)}>{item.icons}</span>
               ) : (
-                <>
+                <div
+                  className={`flex gap-4 cursor-pointer`}
+                  onClick={() => handleMenuItemClick(item.name)}
+                >
                   <span>{item.icons}</span>
-                  <a
-                    href="#"
-                    className="capitalize font-medium text-sm hover:text-[#002D74] transition ease-in-out duration-500"
-                  >
+                  <span className="capitalize font-medium text-sm">
                     {item.name}
-                  </a>
-                </>
+                  </span>
+                </div>
               )}
             </li>
           ))}
         </ul>
       </div>
-      {/* <div className="p-4">
-        <p className="uppercase text-xs text-gray-600 mb-4 tracking-wider">
-          Homes
-        </p>
-        <ul className="mt-4">
-          {menus.map((item, index) => (
-            <li className="mb-2" key={index}>
-              <a
-                href="#"
-                className="mb-3 capitalize font-medium text-sm hover:text-[#002D74] transition ease-in-out duration-500"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div> */}
       <div className="mt-auto">
         <button
           onClick={toggleSidebar}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 w-full"
+          className="bg-[#002D74] hover:bg-[#375b94] text-white font-bold py-2 px-4 w-full"
         >
           {collapsed ? ">>" : "<< Collapse"}
         </button>

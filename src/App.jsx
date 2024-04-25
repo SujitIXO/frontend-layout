@@ -1,11 +1,11 @@
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginRegisterPage from "./pages/LoginRegisterPage";
-import UploadFilePage from "./pages/UploadFilePage";
 import HomePage from "./pages/HomePage";
 import ContactUsPage from "./pages/ContactUsPage";
 import ServicesPage from "./pages/ServicesPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<LoginRegisterPage />} />
-            <Route path="/uploadfile" element={<UploadFilePage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/contact-us" element={<ContactUsPage />} />

@@ -29,7 +29,7 @@ const CustomFileInput = ({ onFileChange }) => {
 
   return (
     <div
-      className={`w-full border border-dotted h-[360px] ${
+      className={`w-full border border-dotted h-1/2 ${
         isDragging ? "border-gray-400" : "border-gray-300"
       } p-4 cursor-pointer flex justify-center items-center`}
       onDragEnter={handleDragEnter}

@@ -22,7 +22,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     login();
-    navigate('/uploadfile')
+    navigate('/dashboard')
   };
 
   return (

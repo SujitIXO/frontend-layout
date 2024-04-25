@@ -25,8 +25,6 @@ function Register() {
 
   return (
         <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-            {/* <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" className="p-2 mt-2 rounded-xl border" required />
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last Name" className="p-2 mt-2 rounded-xl border" required /> */}
             <input type="text" name="username" value={formData.username} onChange={handleChange} placeholder="Username" className="p-2 mt-2 rounded-xl border" required />
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" className="p-2 mt-2 rounded-xl border" required />
             <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" className="p-2 mt-2 rounded-xl border" required />

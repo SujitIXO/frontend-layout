@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "../components/LoginForm";
 import Register from "../components/RegisterForm";
+import Headings from "../components/Headings";
 
 const LoginRegisterPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -10,12 +11,12 @@ const LoginRegisterPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center my-10">
-      <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5">
-        <div className="sm:w-1/2 px-16">
+    <div className="flex items-center justify-center mx-auto overflow-y-scroll no-scrollbar w-full h-full">
+      <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-4">
+        <div className="sm:w-1/2 px-8">
           {isLogin ? (
             <>
-              <h2 className="text-2xl mb-4 text-[#002D74] font-semibold">Login</h2>
+              <Headings headings="Login" />
               <p className="text-sm mt-4">
                 If you already a member, Please login in
               </p>
@@ -23,7 +24,7 @@ const LoginRegisterPage = () => {
             </>
           ) : (
             <>
-              <h2 className="text-2xl mb-4 text-[#002D74] font-semibold">Register</h2>
+              <Headings headings="Register" />
               <p className="text-sm mt-4">
                 If you are not a member, Please register
               </p>

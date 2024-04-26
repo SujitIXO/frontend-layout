@@ -3,12 +3,20 @@ import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { RxHamburgerMenu } from "react-icons/rx";
+import NavmenuSidebar from "./NavmenuSidebar";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated, logout } = useAuth();
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -37,16 +45,17 @@ const Navbar = () => {
       <nav className="flex flex-row bg-white justify-between px-4 py-3 align-middle items-center border border-b-slate-200 shadow-sm">
         <div>
           <Link to="/">
-            <h1 className="text-[#002D74] text-2xl font-bold">Logo</h1>
+            <h1 className="text-[#002D74] text-[1.6rem] font-bold font-Montserrat">Logo</h1>
           </Link>
         </div>
-        <div className="block md:hidden">
+        <div className="block md:hidden sidebar-toggle cursor-pointer" onClick={toggleSidebar}>
           <RxHamburgerMenu />
         </div>
+        <NavmenuSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
         <div className="hidden md:flex">
         {isAuthenticated ? (
           <div>
-            <ul className="flex flex-row gap-4 cursor-pointer font-semibold text-[#002D74] ">
+            <ul className="flex flex-row gap-4 cursor-pointer font-semibold font-Montserrat text-[#002D74] ">
               <li>
                 <Link className="nav-link nav-link-ltr" to="/home">Home</Link>
               </li>
@@ -66,7 +75,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div>
-            <ul className="flex flex-row gap-4 cursor-pointer font-semibold text-[#002D74]">
+            <ul className="flex flex-row gap-4 cursor-pointer font-semibold font-Montserrat text-[#002D74]">
               <li>
                 <Link className="nav-link nav-link-ltr" to="/home">Home</Link>
               </li>
@@ -96,6 +105,7 @@ const Navbar = () => {
                   alt="User"
                 />
                 <span className="mx-2">Username</span>
+                <IoIosArrowDown className="h-4 w-4" />
               </button>
               {isOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">

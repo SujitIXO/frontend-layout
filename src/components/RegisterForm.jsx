@@ -28,7 +28,7 @@ function Register() {
             <input type="text" name="username" value={formData.username} onChange={handleChange} placeholder="Username" className="p-2 mt-2 rounded-xl border" required />
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" className="p-2 mt-2 rounded-xl border" required />
             <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" className="p-2 mt-2 rounded-xl border" required />
-            <button className='bg-[#002D74] rounded-xl text-white py-2'>Register</button>
+            <button className='bg-[#002D74] rounded-xl text-white py-2 font-Montserrat font-medium'>Register</button>
         </form>
   );
 }

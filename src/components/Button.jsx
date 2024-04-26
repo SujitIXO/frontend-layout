@@ -8,7 +8,7 @@ const Button = ({ color, text }) => {
   };
 
   return (
-    <button className={`${colorVariants[color]} inline-block relative overflow-hidden transition-all duration-300 border border-transparent rounded-full uppercase text-white text-xs font-semibold tracking-wider px-3 py-2`}>
+    <button className={`${colorVariants[color]} inline-block overflow-hidden transition-all duration-300 border border-transparent rounded-full uppercase text-white text-xs font-Montserrat font-medium tracking-wider px-3 py-2`}>
       {text}
     </button>
   );

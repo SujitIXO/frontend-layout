@@ -17,7 +17,7 @@ const LoginRegisterPage = () => {
           {isLogin ? (
             <>
               <Headings headings="Login" />
-              <p className="text-sm mt-4">
+              <p className="text-sm mt-4 font-Montserrat font-medium">
                 If you already a member, Please login in
               </p>
               <Login />
@@ -25,18 +25,18 @@ const LoginRegisterPage = () => {
           ) : (
             <>
               <Headings headings="Register" />
-              <p className="text-sm mt-4">
+              <p className="text-sm mt-4 font-Montserrat font-medium">
                 If you are not a member, Please register
               </p>
               <Register />
             </>
           )}
-          <a href="#" className="mt-10 text-sm border-b pb-3">Forget Your Password?</a>
+          <a href="#" className="mt-10 text-sm border-b pb-3 font-Montserrat font-medium">Forget Your Password?</a>
           <span className="mt-4 flex flex-col">
             <a
               href="#"
               onClick={handleToggleForm}
-              className=" text-[#002D74] cursor-pointer"
+              className=" text-[#002D74] cursor-pointer font-Montserrat font-medium"
             >
               {isLogin ? "Don't have account? create here" : "Already have an account? Register"}
             </a>

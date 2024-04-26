@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,3 +53,26 @@ html , body , #root {
   box-shadow: inset 600px 0 0 0 #81a9e9;
   color: #fff;
 }
+
+
+.sidebar {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -50%;
+  background-color: #fff;
+  transition: left 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.close-button {
+  margin: 10px;
+  float: right;
+}
+
+

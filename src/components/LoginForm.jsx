@@ -29,7 +29,7 @@ function Login() {
         <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
             <input className="p-2 mt-4 rounded-xl border" type="text" name="username" value={formData.username} onChange={handleChange} placeholder="Username" required />
             <input className="p-2 mt-2 rounded-xl border" type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" required />
-          <button className='bg-[#002D74] rounded-xl text-white py-2'>Login</button>
+          <button className='bg-[#002D74] rounded-xl text-white py-2 font-Montserrat font-medium'>Login</button>
         </form>
   );
 }
